@@ -37,8 +37,11 @@ app.get('/api/singledata',(req,res)=>{
 
 const express=require("express")
 const mongoose=require("mongoose")
+const cors=require("cors")
 const app=express(); // create a express object is app
 const port=3000
+app.use(express.json());
+app.use(cors())
 const mongourl="mongodb+srv://bowya:bowya123@cluster0.bftvl.mongodb.net/ExpenseTracker"
 mongoose.connect(mongourl)// to connect  with mongo db 
 .then(()=>{
